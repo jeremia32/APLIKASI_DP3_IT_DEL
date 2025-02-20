@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Penilaian Kinerja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h2, h3 {
+            text-align: center;
+        }
+        form {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .question {
+            text-align: left;
+            font-weight: bold;
+        }
+        input[type="radio"] {
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background: #007bff;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover {
+            background: #0056b3;
+        }
+        .rating-table {
+            width: 20%;
+            border-collapse: collapse;
+            margin: 0px 0;
+        }
+        .rating-table th, .rating-table td {
+            border: 1px solid #ddd;
+            padding: 1px;
+            text-align: center;
+        }
+        .rating-table th {
+            background-color: #f4f4f4;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Form Penilaian Kinerja</h2>
+  
+   
+    <form action="#" method="post">
+        <table class="rating-table">
+            <tr>
+                <h4>Range Penilaian</h4>
+                <th>Nilai</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr><td>1</td><td>Sangat Kurang</td></tr>
+            <tr><td>2</td><td>Kurang</td></tr>
+            <tr><td>3</td><td>Cukup Kurang</td></tr>
+            <tr><td>4</td><td>Cukup</td></tr>
+            <tr><td>5</td><td>Baik</td></tr>
+            <tr><td>6</td><td>Sangat Baik</td></tr>
+            <tr><td>7</td><td>Istimewa</td></tr>
+        </table>   
+       </div>
+
+        <!-- Aspek Mengajar -->
+        <h3>A. Aspek Mengajar</h3>
+        
+        <table>
+            <tr>
+                <th>Pertanyaan</th>
+                <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th>
+            </tr>
+            <tr>
+                <td class="question">Seberapa baik persiapan yang dilakukan sebelum mengajar?</td>
+                <td><input type="radio" name="q1" value="1"></td>
+                <td><input type="radio" name="q1" value="2"></td>
+                <td><input type="radio" name="q1" value="3"></td>
+                <td><input type="radio" name="q1" value="4"></td>
+                <td><input type="radio" name="q1" value="5"></td>
+                <td><input type="radio" name="q1" value="6"></td>
+                <td><input type="radio" name="q1" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Apakah menggunakan metode pembelajaran yang menarik dan inovatif?</td>
+                <td><input type="radio" name="q2" value="1"></td>
+                <td><input type="radio" name="q2" value="2"></td>
+                <td><input type="radio" name="q2" value="3"></td>
+                <td><input type="radio" name="q2" value="4"></td>
+                <td><input type="radio" name="q2" value="5"></td>
+                <td><input type="radio" name="q2" value="6"></td>
+                <td><input type="radio" name="q2" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Bagaimana kemampuan dalam menyampaikan materi dengan jelas dan mudah dipahami?</td>
+                <td><input type="radio" name="q2" value="1"></td>
+                <td><input type="radio" name="q2" value="2"></td>
+                <td><input type="radio" name="q2" value="3"></td>
+                <td><input type="radio" name="q2" value="4"></td>
+                <td><input type="radio" name="q2" value="5"></td>
+                <td><input type="radio" name="q2" value="6"></td>
+                <td><input type="radio" name="q2" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Apakah memberikan umpan balik yang konstruktif kepada mahasiswa?</td>
+                <td><input type="radio" name="q2" value="1"></td>
+                <td><input type="radio" name="q2" value="2"></td>
+                <td><input type="radio" name="q2" value="3"></td>
+                <td><input type="radio" name="q2" value="4"></td>
+                <td><input type="radio" name="q2" value="5"></td>
+                <td><input type="radio" name="q2" value="6"></td>
+                <td><input type="radio" name="q2" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Bagaimana keterlibatan dalam membimbing mahasiswa di luar jam kuliah?</td>
+                <td><input type="radio" name="q2" value="1"></td>
+                <td><input type="radio" name="q2" value="2"></td>
+                <td><input type="radio" name="q2" value="3"></td>
+                <td><input type="radio" name="q2" value="4"></td>
+                <td><input type="radio" name="q2" value="5"></td>
+                <td><input type="radio" name="q2" value="6"></td>
+                <td><input type="radio" name="q2" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Seberapa baik mengelola waktu dalam menyelesaikan silabus pembelajaran?</td>
+                <td><input type="radio" name="q2" value="1"></td>
+                <td><input type="radio" name="q2" value="2"></td>
+                <td><input type="radio" name="q2" value="3"></td>
+                <td><input type="radio" name="q2" value="4"></td>
+                <td><input type="radio" name="q2" value="5"></td>
+                <td><input type="radio" name="q2" value="6"></td>
+                <td><input type="radio" name="q2" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Bagaimana tingkat partisipasi mahasiswa dalam kelas yang diajar oleh?</td>
+                <td><input type="radio" name="q2" value="1"></td>
+                <td><input type="radio" name="q2" value="2"></td>
+                <td><input type="radio" name="q2" value="3"></td>
+                <td><input type="radio" name="q2" value="4"></td>
+                <td><input type="radio" name="q2" value="5"></td>
+                <td><input type="radio" name="q2" value="6"></td>
+                <td><input type="radio" name="q2" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Apakah menggunakan teknologi atau media pembelajaran yang sesuai?</td>
+                <td><input type="radio" name="q2" value="1"></td>
+                <td><input type="radio" name="q2" value="2"></td>
+                <td><input type="radio" name="q2" value="3"></td>
+                <td><input type="radio" name="q2" value="4"></td>
+                <td><input type="radio" name="q2" value="5"></td>
+                <td><input type="radio" name="q2" value="6"></td>
+                <td><input type="radio" name="q2" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Bagaimana sikap profesional dalam mengajar dan berinteraksi dengan mahasiswa?</td>
+                <td><input type="radio" name="q2" value="1"></td>
+                <td><input type="radio" name="q2" value="2"></td>
+                <td><input type="radio" name="q2" value="3"></td>
+                <td><input type="radio" name="q2" value="4"></td>
+                <td><input type="radio" name="q2" value="5"></td>
+                <td><input type="radio" name="q2" value="6"></td>
+                <td><input type="radio" name="q2" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Seberapa besar pengaruh pengajaran terhadap perkembangan akademik mahasiswa?</td>
+                <td><input type="radio" name="q2" value="1"></td>
+                <td><input type="radio" name="q2" value="2"></td>
+                <td><input type="radio" name="q2" value="3"></td>
+                <td><input type="radio" name="q2" value="4"></td>
+                <td><input type="radio" name="q2" value="5"></td>
+                <td><input type="radio" name="q2" value="6"></td>
+                <td><input type="radio" name="q2" value="7"></td>
+            </tr>
+        </table>
+
+        <!-- Aspek Penelitian -->
+        <h3>B. Aspek Penelitian</h3>
+        <table>
+            <tr>
+                <th>Pertanyaan</th>
+                <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th>
+            </tr>
+            <tr>
+                <td class="question">Bagaimana produktivitas dalam melakukan penelitian?</td>
+                <td><input type="radio" name="q3" value="1"></td>
+                <td><input type="radio" name="q3" value="2"></td>
+                <td><input type="radio" name="q3" value="3"></td>
+                <td><input type="radio" name="q3" value="4"></td>
+                <td><input type="radio" name="q3" value="5"></td>
+                <td><input type="radio" name="q3" value="6"></td>
+                <td><input type="radio" name="q3" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Apakah penelitian yang dilakukan oleh memiliki dampak yang signifikan?</td>
+                <td><input type="radio" name="q3" value="1"></td>
+                <td><input type="radio" name="q3" value="2"></td>
+                <td><input type="radio" name="q3" value="3"></td>
+                <td><input type="radio" name="q3" value="4"></td>
+                <td><input type="radio" name="q3" value="5"></td>
+                <td><input type="radio" name="q3" value="6"></td>
+                <td><input type="radio" name="q3" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Bagaimana keterlibatan dalam publikasi jurnal atau konferensi ilmiah?</td>
+                <td><input type="radio" name="q3" value="1"></td>
+                <td><input type="radio" name="q3" value="2"></td>
+                <td><input type="radio" name="q3" value="3"></td>
+                <td><input type="radio" name="q3" value="4"></td>
+                <td><input type="radio" name="q3" value="5"></td>
+                <td><input type="radio" name="q3" value="6"></td>
+                <td><input type="radio" name="q3" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Apakah aktif dalam mengembangkan penelitian bersama kolega atau mahasiswa?</td>
+                <td><input type="radio" name="q3" value="1"></td>
+                <td><input type="radio" name="q3" value="2"></td>
+                <td><input type="radio" name="q3" value="3"></td>
+                <td><input type="radio" name="q3" value="4"></td>
+                <td><input type="radio" name="q3" value="5"></td>
+                <td><input type="radio" name="q3" value="6"></td>
+                <td><input type="radio" name="q3" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Seberapa baik kualitas tulisan ilmiah yang dibuat?</td>
+                <td><input type="radio" name="q3" value="1"></td>
+                <td><input type="radio" name="q3" value="2"></td>
+                <td><input type="radio" name="q3" value="3"></td>
+                <td><input type="radio" name="q3" value="4"></td>
+                <td><input type="radio" name="q3" value="5"></td>
+                <td><input type="radio" name="q3" value="6"></td>
+                <td><input type="radio" name="q3" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Apakah penelitian relevan dengan kebutuhan akademik atau industri?</td>
+                <td><input type="radio" name="q3" value="1"></td>
+                <td><input type="radio" name="q3" value="2"></td>
+                <td><input type="radio" name="q3" value="3"></td>
+                <td><input type="radio" name="q3" value="4"></td>
+                <td><input type="radio" name="q3" value="5"></td>
+                <td><input type="radio" name="q3" value="6"></td>
+                <td><input type="radio" name="q3" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Bagaimana kemampuan dalam mendapatkan hibah atau dana penelitian?</td>
+                <td><input type="radio" name="q3" value="1"></td>
+                <td><input type="radio" name="q3" value="2"></td>
+                <td><input type="radio" name="q3" value="3"></td>
+                <td><input type="radio" name="q3" value="4"></td>
+                <td><input type="radio" name="q3" value="5"></td>
+                <td><input type="radio" name="q3" value="6"></td>
+                <td><input type="radio" name="q3" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Seberapa aktif dalam mengikuti seminar, lokakarya, atau konferensi ilmiah?</td>
+                <td><input type="radio" name="q3" value="1"></td>
+                <td><input type="radio" name="q3" value="2"></td>
+                <td><input type="radio" name="q3" value="3"></td>
+                <td><input type="radio" name="q3" value="4"></td>
+                <td><input type="radio" name="q3" value="5"></td>
+                <td><input type="radio" name="q3" value="6"></td>
+                <td><input type="radio" name="q3" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Apakah penelitian yang dilakukan memiliki inovasi atau terobosan baru?</td>
+                <td><input type="radio" name="q3" value="1"></td>
+                <td><input type="radio" name="q3" value="2"></td>
+                <td><input type="radio" name="q3" value="3"></td>
+                <td><input type="radio" name="q3" value="4"></td>
+                <td><input type="radio" name="q3" value="5"></td>
+                <td><input type="radio" name="q3" value="6"></td>
+                <td><input type="radio" name="q3" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Seberapa baik kontribusi dalam membangun komunitas akademik melalui penelitian?</td>
+                <td><input type="radio" name="q3" value="1"></td>
+                <td><input type="radio" name="q3" value="2"></td>
+                <td><input type="radio" name="q3" value="3"></td>
+                <td><input type="radio" name="q3" value="4"></td>
+                <td><input type="radio" name="q3" value="5"></td>
+                <td><input type="radio" name="q3" value="6"></td>
+                <td><input type="radio" name="q3" value="7"></td>
+            </tr>
+        </table>
+
+        <!-- Aspek Pengabdian kepada Masyarakat -->
+        <h3>C. Aspek Pengabdian kepada Masyarakat</h3>
+        <table>
+            <tr>
+                <th>Pertanyaan</th>
+                <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th>
+            </tr>
+            <tr>
+                <td class="question">Seberapa aktif dalam kegiatan pengabdian kepada masyarakat?</td>
+                <td><input type="radio" name="q4" value="1"></td>
+                <td><input type="radio" name="q4" value="2"></td>
+                <td><input type="radio" name="q4" value="3"></td>
+                <td><input type="radio" name="q4" value="4"></td>
+                <td><input type="radio" name="q4" value="5"></td>
+                <td><input type="radio" name="q4" value="6"></td>
+                <td><input type="radio" name="q4" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Bagaimana dampak kegiatan pengabdian yang dilakukan?</td>
+                <td><input type="radio" name="q4" value="1"></td>
+                <td><input type="radio" name="q4" value="2"></td>
+                <td><input type="radio" name="q4" value="3"></td>
+                <td><input type="radio" name="q4" value="4"></td>
+                <td><input type="radio" name="q4" value="5"></td>
+                <td><input type="radio" name="q4" value="6"></td>
+                <td><input type="radio" name="q4" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Apakah kegiatan yang dilakukan relevan dengan bidang keahliannya?</td>
+                <td><input type="radio" name="q4" value="1"></td>
+                <td><input type="radio" name="q4" value="2"></td>
+                <td><input type="radio" name="q4" value="3"></td>
+                <td><input type="radio" name="q4" value="4"></td>
+                <td><input type="radio" name="q4" value="5"></td>
+                <td><input type="radio" name="q4" value="6"></td>
+                <td><input type="radio" name="q4" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Seberapa baik dalam berkolaborasi dengan masyarakat atau instansi terkait?</td>
+                <td><input type="radio" name="q4" value="1"></td>
+                <td><input type="radio" name="q4" value="2"></td>
+                <td><input type="radio" name="q4" value="3"></td>
+                <td><input type="radio" name="q4" value="4"></td>
+                <td><input type="radio" name="q4" value="5"></td>
+                <td><input type="radio" name="q4" value="6"></td>
+                <td><input type="radio" name="q4" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Bagaimana tingkat keterlibatan mahasiswa dalam pengabdian yang dipimpin?</td>
+                <td><input type="radio" name="q4" value="1"></td>
+                <td><input type="radio" name="q4" value="2"></td>
+                <td><input type="radio" name="q4" value="3"></td>
+                <td><input type="radio" name="q4" value="4"></td>
+                <td><input type="radio" name="q4" value="5"></td>
+                <td><input type="radio" name="q4" value="6"></td>
+                <td><input type="radio" name="q4" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Apakah kegiatan pengabdian yang dilakukan memberikan manfaat jangka panjang?</td>
+                <td><input type="radio" name="q4" value="1"></td>
+                <td><input type="radio" name="q4" value="2"></td>
+                <td><input type="radio" name="q4" value="3"></td>
+                <td><input type="radio" name="q4" value="4"></td>
+                <td><input type="radio" name="q4" value="5"></td>
+                <td><input type="radio" name="q4" value="6"></td>
+                <td><input type="radio" name="q4" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Bagaimana kemampuan dalam menyusun program pengabdian yang efektif?</td>
+                <td><input type="radio" name="q4" value="1"></td>
+                <td><input type="radio" name="q4" value="2"></td>
+                <td><input type="radio" name="q4" value="3"></td>
+                <td><input type="radio" name="q4" value="4"></td>
+                <td><input type="radio" name="q4" value="5"></td>
+                <td><input type="radio" name="q4" value="6"></td>
+                <td><input type="radio" name="q4" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Apakah berhasil mendapatkan dana atau sponsor untuk kegiatan pengabdian?</td>
+                <td><input type="radio" name="q4" value="1"></td>
+                <td><input type="radio" name="q4" value="2"></td>
+                <td><input type="radio" name="q4" value="3"></td>
+                <td><input type="radio" name="q4" value="4"></td>
+                <td><input type="radio" name="q4" value="5"></td>
+                <td><input type="radio" name="q4" value="6"></td>
+                <td><input type="radio" name="q4" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Bagaimana kreativitas dalam menyelesaikan masalah sosial melalui pengabdian?</td>
+                <td><input type="radio" name="q4" value="1"></td>
+                <td><input type="radio" name="q4" value="2"></td>
+                <td><input type="radio" name="q4" value="3"></td>
+                <td><input type="radio" name="q4" value="4"></td>
+                <td><input type="radio" name="q4" value="5"></td>
+                <td><input type="radio" name="q4" value="6"></td>
+                <td><input type="radio" name="q4" value="7"></td>
+            </tr>
+            <tr>
+                <td class="question">Seberapa besar pengaruh dalam meningkatkan kesejahteraan masyarakat melalui pengabdian?</td>
+                <td><input type="radio" name="q4" value="1"></td>
+                <td><input type="radio" name="q4" value="2"></td>
+                <td><input type="radio" name="q4" value="3"></td>
+                <td><input type="radio" name="q4" value="4"></td>
+                <td><input type="radio" name="q4" value="5"></td>
+                <td><input type="radio" name="q4" value="6"></td>
+                <td><input type="radio" name="q4" value="7"></td>
+            </tr>
+        </table>
+
+        <a href="PopUpBerhasil.html">
+            <button type="button" class="btn-submit">Kirim</button>
+        </a>
+        
+    </form>
+
+</body>
+</html>
