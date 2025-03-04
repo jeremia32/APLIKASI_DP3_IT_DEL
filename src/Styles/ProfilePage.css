@@ -1,0 +1,56 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.profile-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+.profile-form {
+  margin-top: 20px;
+}
+
+.profile-form .ant-form-item-label {
+  font-weight: 600;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+.profile-form .ant-btn-primary {
+  width: 100%;
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.profile-form .ant-btn-primary:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.profile-form .ant-input {
+  font-size: 16px;
+}
+
+.ant-modal-body {
+  padding: 20px;
+}
+
+.ant-modal-footer {
+  display: none;
+}
+
+.ant-input-password {
+  font-size: 16px;
+}

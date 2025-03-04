@@ -1,0 +1,76 @@
+/* LoginForm.css */
+
+/* General Styles */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.login-box {
+  display: flex;
+  width: 800px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Left Side - Form */
+.login-form {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.login-button {
+  width: 100%;
+  background: #667eea;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover {
+  background: #5a67d8;
+}
+
+/* Right Side - Image */
+.login-image {
+  flex: 1;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.preview-image {
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}

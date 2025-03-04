@@ -1,0 +1,113 @@
+/* Global */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  background: #dfdbdb;
+  /* background: linear-gradient(to right, #0fd146, #243b55); */
+  color: #ffffff;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+section {
+  padding: 50px 0;
+}
+
+/* Header */
+.wrapper > h1,
+.wrapper > h3 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  border-bottom: 5px solid #ff9800;
+  position: relative;
+}
+
+.wrapper > h1::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 5px;
+  background: #ff9800;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+}
+
+/* Tombol */
+/* button {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+} */
+
+/* button:hover {
+  background: #ff5722;
+  transform: scale(1.1);
+} */
+
+/* Efek Hover */
+a {
+  color: #ff9800;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: #ff5722;
+  text-decoration: underline;
+}
+
+/* Animasi Scroll */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wrapper > h1,
+.wrapper > h3 {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .wrapper > h1 {
+    font-size: 2.5rem;
+  }
+}
+.modal-button {
+  background-color: #007bff; /* Contoh warna */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
