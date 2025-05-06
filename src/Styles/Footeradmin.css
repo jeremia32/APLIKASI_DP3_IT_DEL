@@ -1,0 +1,33 @@
+.footer {
+  background-color: #f0f2f5; /* Soft light background */
+  color: #333;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-logo {
+  width: 80px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.footer-info .ant-typography {
+  color: #333;
+  max-width: 600px;
+}
+
+.footer-contact .ant-typography {
+  color: #555;
+}
+
+.footer-divider {
+  border-color: #ccc;
+  margin: 32px 0 16px 0;
+}

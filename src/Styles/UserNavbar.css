@@ -1,0 +1,77 @@
+.user-navbar {
+  background: #fff;
+  padding: 0 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 75px;
+  margin-right: 24px;
+  padding-left: 78px; /* Tambahin padding kiri */
+}
+.navbar-menu .ant-menu-item {
+  padding: 0 16px;
+  font-weight: 500;
+}
+
+.navbar-menu {
+  border-bottom: none;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-btn {
+  margin-right: 16px;
+  border: none;
+  background: none;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-username {
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.navbar-down-icon {
+  font-size: 10px;
+}
+
+/* Desktop-specific styles */
+.desktop-menu {
+  display: block;
+}
+
+/* Mobile-specific styles */
+.mobile-menu-button {
+  display: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu-button {
+    display: block;
+  }
+}
