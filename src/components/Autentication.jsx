@@ -7,7 +7,7 @@ import "../Styles/LoginPage.css";
 import imagebackground from "../assets/imagebackground.jpg";
 import logo from "../assets/ITDEL.jpg";
 import preview1 from "../assets/preview1.jpg";
-import preview2 from "../assets/preview2.webp";
+import preview2 from "../assets/preview2.jpg";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -21,18 +21,43 @@ const LoginForm = () => {
     setSuccessMsg("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/admin/login", values);
+      let response;
+      let role = "";
+
+      console.log("🔍 Mencoba login sebagai Admin...");
+      try {
+        response = await axios.post("http://localhost:5000/api/admin/login", values);
+        role = "admin";
+        console.log("✅ Login Admin Berhasil!", response.data);
+      } catch (adminError) {
+        console.error("❌ Login Admin Gagal:", adminError.response?.data);
+        console.log("🔍 Mencoba login sebagai User...");
+
+        try {
+          response = await axios.post("http://localhost:5000/api/userslogin/login", values);
+          role = "user";
+          console.log("✅ Login User Berhasil!", response.data);
+        } catch (userError) {
+          console.error("❌ Login User Gagal:", userError.response?.data);
+          throw new Error(userError.response?.data?.message || "Login Gagal");
+        }
+      }
+
       const { token } = response.data;
-
       localStorage.setItem("token", token);
-      setSuccessMsg("Login Berhasil!");
+      localStorage.setItem("role", role);
 
-      // Tampilkan alert sukses selama 1 detik sebelum navigasi
+      setSuccessMsg(`Login Berhasil`);
+
       setTimeout(() => {
-        navigate("/dashboard");
+        if (role === "admin") {
+          navigate("/dashboard");
+        } else {
+          navigate("/dashboard_user");
+        }
       }, 1000);
     } catch (error) {
-      setErrorMsg(error.response?.data?.message || "Login Gagal");
+      setErrorMsg(error.message);
     } finally {
       setLoading(false);
     }
@@ -45,26 +70,26 @@ const LoginForm = () => {
         <div className="login-form">
           <div className="login-header">
             <img src={logo} alt="Logo" className="logo" />
-            <h2>Login</h2>
+            {/* <h2>Login</h2> */}
           </div>
 
-          {/* Tampilkan Alert jika login gagal */}
+          {/* Alert jika login gagal */}
           {errorMsg && <Alert message="Error" description={errorMsg} type="error" showIcon closable style={{ marginBottom: 16 }} />}
 
-          {/* Tampilkan Alert jika login sukses */}
+          {/* Alert jika login sukses */}
           {successMsg && <Alert message="Success" description={successMsg} type="success" showIcon style={{ marginBottom: 16 }} />}
 
           <Spin spinning={loading} tip="Logging in...">
             <Form layout="vertical" onFinish={onFinish}>
               <Form.Item name="username" rules={[{ required: true, message: "Masukkan Username!" }]}>
-                <Input prefix={<UserOutlined />} placeholder="Username" size="large" />
+                <Input prefix={<UserOutlined />} placeholder="Nama Pengguna" size="large" />
               </Form.Item>
               <Form.Item name="password" rules={[{ required: true, message: "Masukkan Password!" }]}>
-                <Input.Password prefix={<LockOutlined />} placeholder="Password" size="large" />
+                <Input.Password prefix={<LockOutlined />} placeholder="Kata Sandi" size="large" />
               </Form.Item>
               <Form.Item>
                 <Button type="primary" htmlType="submit" className="login-button" size="large" loading={loading}>
-                  Login
+                  Masuk
                 </Button>
               </Form.Item>
             </Form>
