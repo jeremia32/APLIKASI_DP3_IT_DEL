@@ -10,7 +10,7 @@ body {
   scroll-behavior: smooth;
   background: #dfdbdb;
   /* background: linear-gradient(to right, #0fd146, #243b55); */
-  color: #ffffff;
+  color: #151414;
 }
 
 .wrapper {
@@ -48,23 +48,6 @@ section {
   transform: translateX(-50%);
   bottom: -10px;
 }
-
-/* Tombol */
-/* button {
-  background: #ff9800;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 18px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-} */
-
-/* button:hover {
-  background: #ff5722;
-  transform: scale(1.1);
-} */
 
 /* Efek Hover */
 a {
@@ -110,4 +93,30 @@ a:hover {
   color: white;
   border: none;
   padding: 10px 20px;
+}
+/* styles.css */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.navbar.light {
+  background-color: #f0f0f0;
+}
+
+.navbar.dark {
+  background-color: #333333;
+}
+
+.footer.light {
+  background-color: #f0f0f0;
+}
+
+.footer.dark {
+  background-color: #333333;
 }

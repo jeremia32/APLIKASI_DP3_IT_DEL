@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Form, Input, Button, message, Modal } from "antd";
 import { UserOutlined, MailOutlined, LockOutlined, ArrowLeftOutlined } from "@ant-design/icons";
-import axios from "axios"; // Jika menggunakan axios untuk API
-import { useNavigate } from "react-router-dom"; // Untuk navigasi
-import "../Styles/ProfilePage.css"; // Styling khusus halaman profil
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "../Styles/ProfilePage.css";
 
 const ProfilePage = () => {
-  const navigate = useNavigate(); // Untuk navigasi kembali ke halaman dashboard
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     username: "",
     email: "",
   });
-  const [isModalVisible, setIsModalVisible] = useState(false); // Untuk kontrol modal ubah password
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [passwordForm] = Form.useForm();
+  const [messageApi, contextHolder] = message.useMessage();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -27,39 +28,36 @@ const ProfilePage = () => {
           },
         })
         .then((response) => {
-          // Cek apakah username tersedia dalam response
           if (response.data.username) {
             setUserData({
               username: response.data.username,
               email: response.data.email,
             });
           } else {
-            message.error(response.data.message || "Gagal mengambil data profil.");
+            messageApi.error(response.data.message || "Gagal mengambil data profil.");
           }
         })
         .catch((error) => {
-          message.error(error.response?.data?.message || "Gagal mengambil data profil.");
+          messageApi.error(error.response?.data?.message || "Gagal mengambil data profil.");
         });
     }
-  }, []);
+  }, [messageApi]);
 
   const handlePasswordChange = async (values) => {
     try {
       const token = localStorage.getItem("token");
 
       if (!token) {
-        message.error("Anda belum login. Silakan login terlebih dahulu.");
+        messageApi.error("Anda belum login. Silakan login terlebih dahulu.");
         return;
       }
 
-      // Pastikan username dikirim
       const requestData = {
-        username: userData.username, // Gunakan username dari state
+        username: userData.username,
         oldPassword: values.oldPassword,
         newPassword: values.newPassword,
       };
 
-      // Kirim request ke backend
       const response = await axios.put("http://localhost:5000/api/admin/change-password", requestData, {
         headers: {
           "Content-Type": "application/json",
@@ -67,38 +65,45 @@ const ProfilePage = () => {
         },
       });
 
-      message.success(response.data.message || "Password berhasil diubah!");
+      // Tampilkan pesan loading terlebih dahulu
+      await new Promise((resolve) => {
+        messageApi.open({
+          type: "loading",
+          content: "Mengubah password...",
+          duration: 2.5,
+          onClose: resolve,
+        });
+      });
 
-      setIsModalVisible(false); // Tutup modal setelah berhasil
-      passwordForm.resetFields(); // Reset input password
+      // Setelah loading, tampilkan pesan sukses secara berurutan
+      await new Promise((resolve) => {
+        messageApi.success(response.data.message || "Password berhasil diubah!", 2.5, resolve);
+      });
+
+      setIsModalVisible(false);
+      passwordForm.resetFields();
     } catch (error) {
       const errorMessage = error.response?.data?.message || "Gagal mengubah password.";
-      message.error(errorMessage);
+      messageApi.error(errorMessage);
     }
   };
 
   return (
     <div className="profile-container">
-      {/* Tombol Kembali di Kiri Atas */}
+      {contextHolder}
       <Button type="default" icon={<ArrowLeftOutlined />} onClick={() => navigate("/dashboard")} size="large" className="back-button">
         Kembali ke Dashboard
       </Button>
 
-      {/* Menampilkan Profile */}
       <div className="profile-box">
         <h2>Profile</h2>
         <Form layout="vertical" className="profile-form">
-          {/* Username */}
           <Form.Item label="Username" required>
             <Input prefix={<UserOutlined />} value={userData.username} disabled size="large" />
           </Form.Item>
-
-          {/* Email */}
           <Form.Item label="Email" required>
             <Input prefix={<MailOutlined />} value={userData.email} disabled size="large" />
           </Form.Item>
-
-          {/* Tombol Ubah Password */}
           <Button type="primary" icon={<LockOutlined />} onClick={() => setIsModalVisible(true)} size="large">
             Ubah Password
           </Button>
@@ -110,7 +115,6 @@ const ProfilePage = () => {
           <Form.Item label="Password Lama" name="oldPassword" rules={[{ required: true, message: "Masukkan password lama!" }]}>
             <Input.Password placeholder="Masukkan password lama" size="large" />
           </Form.Item>
-
           <Form.Item
             label="Password Baru"
             name="newPassword"
@@ -123,7 +127,6 @@ const ProfilePage = () => {
           >
             <Input.Password placeholder="Masukkan password baru" size="large" />
           </Form.Item>
-
           <Form.Item
             label="Konfirmasi Password Baru"
             name="confirmPassword"
@@ -142,7 +145,6 @@ const ProfilePage = () => {
           >
             <Input.Password placeholder="Konfirmasi password baru" size="large" />
           </Form.Item>
-
           <Form.Item>
             <Button type="primary" htmlType="submit" size="large" block>
               Ubah Password

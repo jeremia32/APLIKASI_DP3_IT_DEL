@@ -1,0 +1,80 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.search-box {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.loading-spinner {
+  display: block;
+  margin: 20px auto;
+}
+
+.custom-card {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.list-header {
+  font-weight: bold;
+  text-align: left;
+}
+
+.send-button-container {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.modal-buttons {
+  text-align: right;
+  margin-top: 16px;
+}
+
+.cancel-button {
+  margin-right: 8px;
+}
+
+/* masuk sebelum .custom-card atau di file global */
+.item-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.item-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.item-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* DaftarPenilai.css */
+.custom-card .ant-list-item {
+  overflow: hidden;
+}

@@ -1,19 +1,40 @@
 import express from "express";
-import { regisUser } from "../controllers/regisUser.js";
-// import { getAllDosen, updateUser } from "../controllers/userController.js";
-import { getAllDosen, updateUser, getUserByNIP } from "../controllers/userController.js";
+import { getAllDosen, getUsersByRole, getUserByNIP, updateUser, getAllStaff, getAllUsers, getUserCountByRole, getSejawatUsers, getAlldekan, getAllkaprodi } from "../controllers/userController.js";
+import upload from "../middleware/uploadMiddleware.js"; // ✅ Gunakan middleware yang sudah dibuat
+import { regisUser, checkUnique } from "../controllers/regisUser.js";
+import multer from "multer";
 
 const router = express.Router();
 
-// Route untuk registrasi user
-router.post("/register", regisUser);
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/");
+  },
 
-// Rute untuk mendapatkan semua user dengan role "dosen"
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+// Endpoint untuk mendapatkan semua dosen
 router.get("/dosen", getAllDosen);
+router.get("/StafData", getAllStaff);
+router.get("/dekan", getAlldekan);
+router.get("/kaprodi", getAllkaprodi);
+router.post("/register", regisUser);
+router.get("/getUsersByRole", getUsersByRole);
+router.get("/check-unique", checkUnique);
 
-// Route untuk update data user berdasarkan NIP
-// router.put("/users/:nip", updateUser);
-router.put("/:nip", updateUser); // ⬅️ Tambahkan `/update/`
-router.get("/:nip", getUserByNIP); // ⬅️ Tambahkan rute untuk GET user by NIP
+// Endpoint untuk mendapatkan user berdasarkan NIP
+router.get("/usercount", getUserCountByRole);
+router.get("/:nip", getUserByNIP);
+// router.get("/:id", getUserById);
+
+router.get("/", getAllUsers);
+router.get("/UserDinilai", getSejawatUsers);
+
+// Endpoint untuk memperbarui user (dengan dukungan upload file)
+// router.put("/:nip", upload.single("bukti_prestasi"), updateUser);
+router.put("/:nip", upload.fields([{ name: "bukti_prestasi", maxCount: 3 }]), updateUser);
 
 export default router;

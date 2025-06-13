@@ -1,0 +1,38 @@
+[
+  {
+    "question": "Apa itu DP3 Institut Teknologi Del?",
+    "answer": "DP3 adalah Direktorat Pengembangan Program dan Pembelajaran yang bertanggung jawab dalam merancang, mengembangkan, dan mengevaluasi program pendidikan serta proses pembelajaran di IT Del."
+  },
+  {
+    "question": "Bagaimana cara Melakukan Penilaian?",
+    "answer": "Pengguna yang sudah berhasil Login Mendapat Pengguna yang harus dinilai Pada Halaman Dashboard, kemudian klik tombol 'Nilai' pada pengguna yang ingin dinilai. Dan mengisi Semua Field pada setiap Aspek pertanyaan kemudian dapat memasukkan saran(Optional) dan klik tombol 'Kirim Penilaian'."
+  },
+  {
+    "question": "Siapa yang dapat menghubungi DP3 IT Del?",
+    "answer": "DP3 dapat dihubungi oleh tenaga kependidikan yang ingin mengetahui atau menyampaikan masukan terkait permasalahan terkait Dp3 institut Teknologi Del."
+  },
+  {
+    "question": "Apa peran DP3 dalam evaluasi pembelajaran?",
+    "answer": "DP3 melakukan evaluasi proses pembelajaran setiap semester melalui survei Staff Akademik dan Staf non Akademik"
+  },
+  {
+    "question": "Bagaimana DP3 menyediakan Penilaian untuk Staff?",
+    "answer": "Admin akan membuat Penilaian untuk Staff melalui halaman Penilaian, kemudian akan mengirimkan akun kepada Staff yang harus menilai."
+  },
+  {
+    "question": "Kapan Penilaian Dp3  biasanya dilaksanakan?",
+    "answer": "Penilaian DP3 biasanya dilaksanakan pada akhir semester, setelah proses pembelajaran selesai."
+  },
+  {
+    "question": "Siapa yang bertanggung jawab atas monitoring Penilaian?",
+    "answer": "Hrd Dan Rektorat yang bertanggung jawab atas monitoring Penilaian, memastikan bahwa semua penilaian dilakukan dengan baik dan sesuai jadwal."
+  },
+  {
+    "question": "Apakah DP3 menerima masukan dari mahasiswa?",
+    "answer": "Tentu, DP3 terbuka menerima masukan dari mahasiswa, terutama yang berkaitan dengan kualitas proses pembelajaran dan pengembangan kurikulum."
+  },
+  {
+    "question": "Pertanyaan Lebih Lanjut?",
+    "answer": "Anda Dapat menanyakan pertanyaan lebih lanjut di button kanan bawah di halaman Tentang DP3, atau menghubungi DP3 melalui email resmi berikut dpitdelvokasi@gmail.com"
+  }
+]

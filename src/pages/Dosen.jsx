@@ -1,5 +1,5 @@
 import Navbaradmin from "../components/Navbaradmin";
-import DosenData from "../components/dosenData";
+import DosenData from "../components/DosenData";
 function Dosen() {
   return (
     <>

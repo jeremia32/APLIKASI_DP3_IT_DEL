@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #c4c5c6, #e8e6eb);
 }
 
 .login-box {
@@ -18,6 +18,9 @@
   overflow: hidden;
 }
 
+.login-image {
+  background: rgb(183, 23, 23);
+}
 /* Left Side - Form */
 .login-form {
   flex: 1;
@@ -33,15 +36,9 @@
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 200px;
+  height: 200px;
   margin-bottom: 10px;
-}
-
-h2 {
-  color: #333;
-  font-size: 24px;
-  font-weight: 600;
 }
 
 .login-button {
@@ -67,7 +64,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 40px;
 }
 
 .preview-image {
